@@ -1,29 +1,35 @@
-# Rsbuild Project
-
-## Setup
-
-Install the dependencies:
-
-```bash
-pnpm install
+```tsx
+<div className="max-w-md h-auto">
+	<video
+		src="https://ik.imagekit.io/deus/xlargex.mp4?tr=w-500"
+		loop
+		muted
+		autoPlay
+		poster="https://ik.imagekit.io/deus/xlargex.mp4/ik-thumbnail.jpg?tr=so-2"
+	/>
+</div>
 ```
 
-## Get Started
+** Escogiendo el archivo de manifiesto **
+https://ik.imagekit.io/deus/xlargex.mp4/ik-master.m3u8?tr=sr-240_360_720_1080
 
-Start the dev server:
+** VideoJs o el mismo de imagekit **
 
 ```bash
-pnpm dev
+  bun i video.js
 ```
 
-Build the app for production:
-
-```bash
-pnpm build
+```tsx
+import videojs from "video.js";
+import "video.js/dist/video-js.css";
 ```
 
-Preview the production build locally:
+** Usando ImageKit **
 
 ```bash
-pnpm preview
+bun i imagekitio-react
+```
+
+```tsx
+import { IKVideo } from "imagekitio-react";
 ```

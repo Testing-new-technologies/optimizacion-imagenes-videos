@@ -1,21 +1,34 @@
+import {IKContext, IKVideo} from "imagekitio-react";
 import "./App.css";
 
 const App = () => {
-	return (
-		<div className="content">
-			<h1>Rsbuild with React</h1>
-			<p>Start building amazing things with Rsbuild.</p>
-			<div className="max-w-md h-auto">
-				<video
-					src="https://ik.imagekit.io/deus/xlargex.mp4?tr=w-500"
-					loop
-					muted
-					autoPlay
-					poster="https://ik.imagekit.io/deus/xlargex.mp4/ik-thumbnail.jpg?tr=so-2"
-				/>
-			</div>
-		</div>
-	);
+  return (
+    <IKContext urlEndpoint={import.meta.env.PUBLIC_URL_ENDPOINT}>
+      <div className="content">
+        <h1>Rsbuild with React</h1>
+        <p>Start building amazing things with Rsbuild.</p>
+
+        <div className="" style={{width: "200px", height: "100px"}}>
+          <IKVideo
+            path="/xlargex.mp4"
+            controls={false}
+            autoPlay
+            loop
+            muted={true}
+            transformation={{
+              width: "400",
+              //format: "hls",
+              //quality: "auto"
+            }}
+            className={"object-cover object-cover-cover"}
+            poster="/xlargex.mp4/ik-thumbnail.jpg"
+            //preload={"metadata"}
+          />
+        </div>
+
+      </div>
+    </IKContext>
+  );
 };
 
 export default App;
